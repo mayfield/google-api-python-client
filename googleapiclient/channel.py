@@ -88,7 +88,7 @@ X_GOOG_RESOURCE_ID    = 'X-GOOG-RESOURCE-ID'
 
 def _upper_header_keys(headers):
   new_headers = {}
-  for k, v in headers.iteritems():
+  for k, v in headers.items():
     new_headers[k.upper()] = v
   return new_headers
 
@@ -218,7 +218,7 @@ class Channel(object):
     Args:
       resp: dict, The response from a watch() method.
     """
-    for json_name, param_name in CHANNEL_PARAMS.iteritems():
+    for json_name, param_name in CHANNEL_PARAMS.items():
       value = resp.get(json_name)
       if value is not None:
         setattr(self, param_name, value)
